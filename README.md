@@ -17,8 +17,14 @@ docker container run -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -it --rm medm b
 `adduser <username> --uid <id> --force-badname`
 
 * Then change to your user, and run medm:
-`
+```
 su <username>
-./medm
-`
 
+./medm
+```
+
+* Normally to run medm it is necessary to use .adl files, and macros. For this could be necessary copy .adl to docker and pass macros as argument, like this:
+
+`
+./medm -x -macro "P=mcaTest:,R=Amptek1:, M=mca1" Amptek.adl & 
+`
