@@ -2,8 +2,7 @@ FROM lnlssol/docker-debian8-epicsbase
 
 RUN apt-get update
 
-RUN apt-get install x11proto-print-dev libxmuu-dev  libnetcdf-dev libhdf5-dev  libbz2-dev  libxml2-dev libxp-dev -y
-
+RUN apt-get install x11proto-print-dev libxmuu-dev  libnetcdf-dev libhdf5-dev  libbz2-dev  libxml2-dev libxp-dev libxt-dev libmotif-dev libxmu-headers libxtst-dev libxp-dev libxmu-dev -y
 
 #install MEDM
 
