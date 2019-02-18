@@ -8,18 +8,12 @@ To use medm it is necessary some configuration:
 
 `xhost localhost`
 
-* Run container with paramater `run -v /tmp/.X11-unix:/tmp/.X11-unix` and `-e DISPLAY , like this:
+* Command to run :
 
-docker container run -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -it --rm medm bash
+docker container run --env="DISPLAY" -it --rm --volume="$HOME/.Xauthority:/root/.Xauthority:rw" --net=host lnlssol/docker-medm bash
 
-* Inside container create your user, with the same id, some like this:
-
-`adduser <username> --uid <id> --force-badname`
-
-* Then change to your user, and run medm:
+* Run medm:
 ```
-su <username>
-
 ./medm
 ```
 
