@@ -26,9 +26,9 @@ WORKDIR /usr/local/epics/extensions/src/medm-MEDM3_1_13
 RUN make
 WORKDIR /usr/local/epics/extensions/bin/linux-x86_64
 
-#./medm -x -macro "P=mcaTest:,R=Amptek1:, M=mca1" /usr/local/epics/synApps/support/mca-R7-7/mcaApp/op/adl/Amptek.adl & 
-
+WORKDIR /usr/bin
+RUN ln -s /usr/local/epics/extensions/bin/linux-x86_64/medm
 
 CMD bash
-
+WORKDIR /root
 
