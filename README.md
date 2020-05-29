@@ -10,7 +10,7 @@ To use medm it is necessary some configuration:
 
 * Command to run :
 
-`docker container run --env="DISPLAY" -it --rm --volume="$HOME/.Xauthority:/root/.Xauthority:rw" --net=host lnlssol/docker-medm bash`
+`docker container run -v "$HOME:/root/host/" --env="DISPLAY" -it --rm --volume="$HOME/.Xauthority:/root/.Xauthority:rw" --net=host lnlssol/docker-medm bash`
 
 * Run medm:
 
@@ -24,5 +24,5 @@ To use medm it is necessary some configuration:
 
 On newer systems there is no .Xauthority under $HOME. In this case try:
 
-`docker container run --env="DISPLAY" -it --net=host --privileged lnlssol/docker-medm bash`
+`docker container run -v "$HOME:/root/host/" --env="DISPLAY" -it --net=host --privileged lnlssol/docker-medm bash`
 
